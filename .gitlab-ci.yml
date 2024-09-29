@@ -1,0 +1,21 @@
+nano .gitlab-ci.yml cd ~/godot
+stages:
+  - build
+  - test
+  - package
+
+build:
+  stage: build
+  script:
+    - ./build.sh --ci build
+
+test:
+  stage: test
+  script:
+    - ./build.sh --ci test
+
+package:
+  stage: package
+  script:
+    - ./build.sh --ci package
+
